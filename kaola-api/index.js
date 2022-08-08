@@ -3,10 +3,12 @@ const app = new Koa();
 const cors = require('koa-cors');
 const router = require('koa-router')();
 const goodsRouter = require('./routers/Rgoods')
+const navbarsRouter = require('./routers/Rnavbars')
 
 // 挂载跨域中间件
 app.use(cors());
 app.use(goodsRouter);
+app.use(navbarsRouter);
 app.use(router.routes())
 
 app.listen(3022, () => {

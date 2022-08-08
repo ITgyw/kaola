@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd-mobile": "^5.20.0",
     "axios": "^0.27.2",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
@@ -17,7 +18,8 @@
     "react-router-dom": "^6.3.0",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "swiper": "^8.3.2"
   },
   "devDependencies": {
     "@types/node": "^18.6.4",
