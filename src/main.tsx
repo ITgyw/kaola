@@ -5,6 +5,9 @@ import './rem'
 import { Provider } from 'react-redux'
 import store from './store'
 import App from './App'
+
+import './assets/styles/reset.css'
+import './assets/fonts/iconfont.css'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
