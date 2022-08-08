@@ -3,7 +3,12 @@ import * as actionTypes from './constants'
 
 const initalState = {
     loading: true,
-    goods: []
+    good: {
+        goods: []
+    },
+    navbar: {
+        navbars: []
+    }
 }
 
 const loadingReducer = (state = initalState.loading, action: AnyAction) => {
@@ -15,7 +20,7 @@ const loadingReducer = (state = initalState.loading, action: AnyAction) => {
     }
 }
 
-const goodsReducer = (state = initalState.goods, action: AnyAction) => {
+const goodsReducer = (state = initalState.good, action: AnyAction) => {
     switch (action.type) {
         case actionTypes.SET_GOODS:
             return {
@@ -28,7 +33,20 @@ const goodsReducer = (state = initalState.goods, action: AnyAction) => {
     }
 }
 
+const navbarsReducer = (state = initalState.navbar, action: AnyAction) => {
+    switch (action.type) {
+        case actionTypes.SET_NAVBARS:
+            return {
+                ...state,
+                navbars: action.data
+            }
+        default:
+            return state
+    }
+}
+
 export default combineReducers({
     loading: loadingReducer,
-    goods: goodsReducer
+    good: goodsReducer,
+    navbar: navbarsReducer
 })
