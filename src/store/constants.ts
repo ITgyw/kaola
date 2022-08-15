@@ -1,3 +1,5 @@
 export const SET_GOODS = "SET_GOODS"
 export const SET_LOADING = "SET_LOADING"
 export const SET_NAVBARS = "SET_NAVBARS"
+export const SET_DETAIL = "SET_DETAIL"
+export const SET_SIDERBARS = "SET_SIDERBARS"

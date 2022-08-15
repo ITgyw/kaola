@@ -2,7 +2,9 @@ import { Dispatch } from "react";
 import * as actionTypes from '../constants'
 import {
     getGoodsRequest,
-    getNavbarsRequest
+    getNavbarsRequest,
+    getDetailRequest,
+    getSiderbarsRequest
 } from '@/api/request'
 
 export const getHomeDataAction = () => {
@@ -18,15 +20,27 @@ export const getHomeDataAction = () => {
         })
     }
 }
-export const getDetailDataAction = () => {
+export const getDetailDataAction = (id: number) => {
     return (dispatch: any) => {
         dispatch(setLoading(true))
         return Promise.all([
-            getGoodsRequest()
+            getDetailRequest(id)
         ]).then((goodsData) => {
-            dispatch(setgoods(goodsData))
+            dispatch(setdetail(goodsData))
             dispatch(setLoading(false))
         })
+    }
+}
+
+export const getSiderbarsDataAction = () => {
+    return (dispatch: any) => {
+        dispatch(setLoading(true))
+        return getSiderbarsRequest()
+            .then((siderbarsData) => {
+                dispatch(setsiderbars(siderbarsData.data))
+                dispatch(setLoading(false))
+            })
+
     }
 }
 export const setLoading = (data: boolean) => ({
@@ -41,5 +55,15 @@ export const setgoods = (data: any[]) => ({
 
 export const setnavbars = (data: any[]) => ({
     type: actionTypes.SET_NAVBARS,
+    data
+})
+
+export const setdetail = (data: any[]) => ({
+    type: actionTypes.SET_DETAIL,
+    data
+})
+
+export const setsiderbars = (data: any) => ({
+    type: actionTypes.SET_SIDERBARS,
     data
 })

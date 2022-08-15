@@ -8,6 +8,12 @@ const initalState = {
     },
     navbar: {
         navbars: []
+    },
+    detail: {
+        details: []
+    },
+    siderbar: {
+        siderbars: []
     }
 }
 
@@ -44,9 +50,32 @@ const navbarsReducer = (state = initalState.navbar, action: AnyAction) => {
             return state
     }
 }
-
+const detailsReducer = (state = initalState.detail, action: AnyAction) => {
+    switch (action.type) {
+        case actionTypes.SET_DETAIL:
+            return {
+                ...state,
+                details: action.data
+            }
+        default:
+            return state
+    }
+}
+const siderbarsReducer = (state = initalState.siderbar, action: AnyAction) => {
+    switch (action.type) {
+        case actionTypes.SET_SIDERBARS:
+            return {
+                ...state,
+                siderbars: action.data
+            }
+        default:
+            return state
+    }
+}
 export default combineReducers({
     loading: loadingReducer,
     good: goodsReducer,
-    navbar: navbarsReducer
+    navbar: navbarsReducer,
+    detail: detailsReducer,
+    siderbar: siderbarsReducer
 })

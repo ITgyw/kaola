@@ -39,39 +39,49 @@ const Home: React.FC<HomeProps> = (props) => {
     const Goods = goods.map((item: any) => (
         <Tabs.Tab
             title={
-                <Badge content={item.title.sort} style={{ '--right': '-10px', '--top': '8px' }}>
-                    {item.title.name}
+                <Badge content={item.title.sort} style={{ '--right': '-35px', '--top': '12px' }}>
+                    <div className="name">
+                        {item.title.name}
+                    </div>
                 </Badge>
             }
             key={item.id}
         >
-            {
-                item.data.map((item2: any) => (
-                    <div className="item">
-                        <Link to={`/detail/${item2.goodsId}`}>
-                            <div className="mian-image">
-                                <img src={item2.goodsImage} alt="" />
-                            </div>
-                            <div className="title">
-                                <div className="left">
-                                    <img src={item2.titleForeHeadLabelList} alt="" />
+            <div className="tab" >
+                {
+                    item.data.map((item2: any) => (
+                        <div className="item" key={item2.goodsId}>
+                            <Link to={`/detail/${item2.goodsId}`} className="link">
+                                <div className="main-image">
+                                    <img src={item2.goodsImage} alt="" />
                                 </div>
-                                <div className="main">
-                                    <img src={item2.countryLogo} alt="" />
-                                </div>
-                                <span>{item2.goodsName}</span>
-                            </div>
-                            <div className="price">
-                                <div className="enjoy-">
-                                    <span className="left"> {item2.enjoyPriceInfo.enjoyPricePrefix + `￥`}</span>
-                                    <span className="right">{item2.enjoyPriceInfo.enjoyPrice}</span>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                ))
+                                <div className="title">
+                                    {
+                                        item2.titleForeHeadLabelList ?
+                                            <div className="left">
+                                                <img src={item2.titleForeHeadLabelList} alt="" />
+                                            </div> : <></>
+                                    }
 
-            }
+                                    <div className="main">
+                                        <img src={item2.countryLogo} alt="" />
+                                    </div>
+                                    <span className="right">{item2.goodsName}</span>
+                                </div>
+                                <div className="price">
+                                    <div className="enjoy-">
+                                        <span className="left"> {item2.enjoyPriceInfo.enjoyPricePrefix + `￥`}</span>
+                                        <span className="right">{item2.enjoyPriceInfo.enjoyPrice}</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
+                    ))
+
+                }
+            </div>
+
+
         </Tabs.Tab>
     ))
     return (
@@ -90,25 +100,29 @@ const Home: React.FC<HomeProps> = (props) => {
                 </div>
             </div>
             <div className="search">
-                <i className="iconfont icon-iconfontscan"></i>
+                <div className="iconfont icon-iconfontscan"></div>
                 <Link className="Box" to={'/search'}>
                     <input type="text" className='box'
                         placeholder='雅诗兰黛'
                     />
-                    <span>搜索</span>
+                    <div className="span">搜索</div>
                 </Link>
             </div>
-            <Tabs>
-                {Navbar}
-            </Tabs>
-            <div className="sort">
-                <i className="iconfont icon-fenlei1">分类</i>
+            <div className="middle">
+                <Tabs className="select">
+                    {Navbar}
+                </Tabs>
+                <div className="sort">
+                    <i className="iconfont icon-fenlei1"></i>
+                    <span>分类</span>
+                </div>
             </div>
-            <Tabs>
+
+            <Tabs defaultActiveKey="1" style={{ "--active-title-color": "red", "--active-line-color": "#f6f6f6" }} activeLineMode="full">
                 {Goods}
             </Tabs>
 
-        </Wrapper>
+        </Wrapper >
     )
 
 }

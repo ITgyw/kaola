@@ -19,14 +19,19 @@ module.exports = [
 
                     "content": "下单立减40元",
                     "content1": "包税"
-
                 },
                 "enjoyPriceInfo": {
                     "enjoyPricePrefix": "优惠价",
                     "enjoyPrice": "221",
                 },
 
-                "goodsId": 279504,
+                "goodsId": 15528,
+                "imgs": [
+                    "https://kaola-haitao.oss.kaolacdn.com/3e66cc82de6b497aaefdb7f6936d675a1563507202923jy9jtilo10264.jpg",
+                    "https://kaola-haitao.oss.kaolacdn.com/f20fb093526f43be909d281426a678291563507202064jy9jthx910263.jpg",
+                    "https://kaola-haitao.oss.kaolacdn.com/aff8a138681a4a7c896f401bdc4760901563507201420jy9jthfn10262.jpg",
+                    "https://kaola-haitao.oss.kaolacdn.com/1bl7jtgk016_800_800.jpg"
+                ]
 
 
             },
