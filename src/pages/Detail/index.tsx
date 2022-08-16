@@ -5,6 +5,7 @@ import React, { useEffect } from 'react'
 import Banners from './Banners'
 import Tab from './Tab'
 import { useLocation } from 'react-router'
+import Header from './Header'
 // import { log } from 'console'
 
 
@@ -28,6 +29,7 @@ const Detail: React.FC<any> = (props) => {
 
     return (
         <div>
+            <Header />
             <Banners details={details} />
             <Tab />
         </div>

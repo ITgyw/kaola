@@ -2,11 +2,11 @@ import styled from "styled-components";
 import style, { px2rem } from "@/assets/global-style";
 
 const BannersWrapper = styled.div`
-background-color: pink;
+margin-top: ${px2rem(45)};
 img {
     
-    width:${px2rem(390)};
-    height:${px2rem(390)};
+    width:${px2rem(375)};
+    height:${px2rem(375)};
 }
 .customIndicator {
   position: absolute;

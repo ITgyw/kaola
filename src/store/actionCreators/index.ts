@@ -43,6 +43,11 @@ export const getSiderbarsDataAction = () => {
 
     }
 }
+export const getShoppingCarDataAction = () => {
+    return (dispatch: any) => {
+        return
+    }
+}
 export const setLoading = (data: boolean) => ({
     type: actionTypes.SET_LOADING,
     data
@@ -65,5 +70,21 @@ export const setdetail = (data: any[]) => ({
 
 export const setsiderbars = (data: any) => ({
     type: actionTypes.SET_SIDERBARS,
+    data
+})
+export const setiscar = (goodsId: any) => ({
+    type: actionTypes.SET_ISCAR,
+    data: goodsId
+})
+export const setcheck = (data: any) => ({
+    type: actionTypes.SET_CHECK,
+    data
+})
+export const setcounts = (data: any) => ({
+    type: actionTypes.SET_COUNTS,
+    data
+})
+export const setallcheck = (data: any) => ({
+    type: actionTypes.SET_ALL_CHECK,
     data
 })
