@@ -8,11 +8,11 @@ const Header = () => {
             <Link className="back" to="/home">
                 <i className='iconfont icon-fanhui'></i>
             </Link>
-            <div className="font">
+            <Link className="font" to="/shoppingcart">
                 <i className="iconfont icon-gouwuche"></i>
                 <i className="iconfont icon-shoucang"></i>
                 <i className="iconfont icon-fenxiang"></i>
-            </div>
+            </Link>
         </HeaderWrapper>
     )
 }

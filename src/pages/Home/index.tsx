@@ -26,7 +26,10 @@ const Home: React.FC<HomeProps> = (props) => {
         getHomeDataActionDispatch
     } = props
     useEffect(() => {
-        getHomeDataActionDispatch()
+        if( goods.length==0)
+        {
+            getHomeDataActionDispatch()
+        }
 
     }, [])
     const Navbar = navbars.map((item) => (
@@ -126,11 +129,14 @@ const Home: React.FC<HomeProps> = (props) => {
     )
 
 }
-const mapStateToProps = (state: rootState) => ({
-    loading: state.loading,
-    goods: state.good.goods,
-    navbars: state.navbar.navbars
-})
+const mapStateToProps = (state: rootState) => {
+    
+    return {
+        loading: state.loading,
+        goods: state.good.goods,
+        navbars: state.navbar.navbars
+    }
+}
 
 const mapDispatchToProps = (dispatch: any) => ({
     getHomeDataActionDispatch() {

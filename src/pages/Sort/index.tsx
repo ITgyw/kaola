@@ -63,10 +63,6 @@ const Sort: React.FC<SiderbarProps> = (props) => {
                             </SideBar>
                         </div>
                         <div className="main">
-                            {/* {
-                                
-                            } */}
-
                             {
                                 siderbars.map((item: any) => (
                                     <div
@@ -76,7 +72,6 @@ const Sort: React.FC<SiderbarProps> = (props) => {
                                             activeKey === item.key && 'active'
                                         )}
                                     >
-
                                         {item.data.map((item2: any, index: number) => (
                                             <div className='item2' key={index}>
                                                 <div className="item2-title">
@@ -99,9 +94,6 @@ const Sort: React.FC<SiderbarProps> = (props) => {
                                             </div>
                                         ))}
                                     </div>
-
-
-
                                 )
                                 )
                             }
